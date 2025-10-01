@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подарочек</title>
+  <link rel="icon" type="image/png" href="src/icon1.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", sans-serif;
+      background: #fbe8e6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .card {
+      background: #fffdfa;
+      border-radius: 16px;
+      max-width: 900px;
+      padding: 60px 50px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .card h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      text-align: center;
+      color: #5f4c43;
+      font-weight: 400;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: #f3d1cc;
+      margin: 20px auto;
+      border-radius: 1px;
+    }
+
+    .block {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .block.two-col {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .block.reverse {
+      grid-template-columns: 1fr 1fr;
+      direction: rtl;
+    }
+
+    .block.reverse .text {
+      direction: ltr;
+    }
+
+    .text p {
+      margin: 0 0 15px;
+      line-height: 1.7;
+      color: #5f4c43;
+      font-size: 1.05rem;
+      text-align: left;
+    }
+
+    /* Стили кнопки */
+    .btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #f3b0aa; /* более насыщенный розовый */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease;
+    margin-top: 40px; /* отступ вниз — увеличили! */
+  }
+  .btn:hover {
+    background: #ee9c96;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+  }
+
+    .photo img,
+    .gallery img {
+      width: 320px;
+      height: 426px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transition: 0.3s ease;
+    }
+    .photo img:hover,
+    .gallery img:hover {
+      transform: scale(1.03);
+      filter: saturate(115%) brightness(105%);
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      font-style: italic;
+      color: #7c6c64;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>С днём рождения 🌹</h1>
+    <div class="divider"></div>
+
+    <div class="block two-col">
+      <div class="text">
+        <p>Ещё раз с праздником!</p>
+        <p>Пожелания уже написал в телеге, так что не буду особо распинаться тут</p>
+        <p>В общем, не особо знал, чем вас удивить, но не зря же "программист".
+          Так что решил сделать вот такую открыточку, совместно с Романом.</p>
+      </div>
+      <div class="photo">
+        <img src="src/bolsh.jpg" alt="Фото 1">
+      </div>
+    </div>
+
+    <div class="block reverse">
+      <div class="text">
+        <p><i>Пусть день начнётся с кофеёчка,</i></p>
+        <p><i>А счастье — с первой же зефирки.</i></p>
+        <p><i>И даже если жизнь — задачка,</i></p>
+        <p><i>Пусть все решаются с улыбки!</i></p>
+      </div>
+      <div class="photo">
+        <img src="src/bolsh2.jpg" alt="Фото 2">
+      </div>
+    </div>
+
+    <div class="block two-col">
+      <div class="text" style="text-align: center;">
+        <p>Тут особо ничего нет, <b>но если нажать на кнопку внизу...</b></p>
+        <p><b>То там будет такое...</b></p>
+        <a href="https://discord.gg/VqcWYzWQ" target="_blank" class="btn">Смотреть 🎁</a>
+      </div>
+      <div class="photo">
+        <img src="src/bolsh4.jpg" alt="Фото 3">
+      </div>
+    </div>
+
+    <div class="footer">С любовью, бывший 10 Б 🌸</div>
+  </div>
+</body>
+</html>
+
+<!--
+      <img src="src/bolsh.jpg" alt="Фото 1">
+      <img src="src/bolsh2.jpg" alt="Фото 2">
+      <img src="src/bolsh4.jpg" alt="Фото 3">
+-->
