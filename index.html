@@ -14,7 +14,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 40px;
+      padding: 20px; /* уменьшили для мобильных */
       box-sizing: border-box;
     }
 
@@ -22,16 +22,17 @@
       background: #fffdfa;
       border-radius: 16px;
       max-width: 900px;
-      padding: 60px 50px;
+      width: 100%; /* чтобы не выходила за экран на мобилке */
+      padding: 40px 25px; /* меньше паддингов на мобилке */
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
       display: flex;
       flex-direction: column;
-      gap: 50px;
+      gap: 40px; /* чуть меньше разрывов */
     }
 
     .card h1 {
       margin: 0;
-      font-size: 2.2rem;
+      font-size: 1.8rem; /* чуть меньше заголовок на мобилке */
       text-align: center;
       color: #5f4c43;
       font-weight: 400;
@@ -53,12 +54,12 @@
       justify-items: center;
     }
 
-    .block.two-col {
+    .block.two-col,
+    .block.reverse {
       grid-template-columns: 1fr 1fr;
     }
 
     .block.reverse {
-      grid-template-columns: 1fr 1fr;
       direction: rtl;
     }
 
@@ -76,28 +77,30 @@
 
     /* Стили кнопки */
     .btn {
-    display: inline-block;
-    padding: 12px 28px;
-    background: #f3b0aa; /* более насыщенный розовый */
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    transition: all 0.25s ease;
-    margin-top: 40px; /* отступ вниз — увеличили! */
-  }
-  .btn:hover {
-    background: #ee9c96;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
-  }
+      display: inline-block;
+      padding: 14px 32px;
+      background: #f3b0aa;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease;
+      margin-top: 40px;
+    }
+    .btn:hover {
+      background: #ee9c96;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+    }
 
     .photo img,
     .gallery img {
-      width: 320px;
-      height: 426px;
+      width: 100%; /* теперь фото растягиваются по контейнеру */
+      max-width: 320px; /* но не больше 320px */
+      height: auto; /* высота подстраивается автоматически */
+      aspect-ratio: 3/4; /* сохраняем вертикальный формат */
       border-radius: 12px;
       object-fit: cover;
       box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -121,6 +124,47 @@
       font-style: italic;
       color: #7c6c64;
       margin-top: 20px;
+      font-size: 1rem;
+    }
+
+    /* Медиазапросы для телефонов — ширина до 768px */
+    @media (max-width: 768px) {
+      .card {
+        padding: 30px 20px;
+        gap: 30px;
+      }
+
+      .card h1 {
+        font-size: 1.6rem;
+      }
+
+      .text p {
+        font-size: 1rem;
+        text-align: center; /* центрируем текст на мобилке */
+      }
+
+      .block.two-col,
+      .block.reverse {
+        grid-template-columns: 1fr; /* одна колонка на мобильных */
+        direction: ltr; /* отключаем зеркалирование */
+      }
+
+      .photo img,
+      .gallery img {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 3/4;
+      }
+
+      .btn {
+        font-size: 1.2rem;
+        padding: 16px 36px;
+        margin-top: 30px;
+      }
+
+      .footer {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
@@ -133,8 +177,7 @@
       <div class="text">
         <p>Ещё раз с праздником!</p>
         <p>Пожелания уже написал в телеге, так что не буду особо распинаться тут</p>
-        <p>В общем, не особо знал, чем вас удивить, но не зря же "программист".
-          Так что решил сделать вот такую открыточку, совместно с Романом.</p>
+        <p>В общем, не особо знал, чем вас удивить, но не зря же "программист". Так что решил сделать вот такую открыточку, совместно с Романом.</p>
       </div>
       <div class="photo">
         <img src="src/bolsh.jpg" alt="Фото 1">
